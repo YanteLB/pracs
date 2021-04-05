@@ -29,13 +29,28 @@ int main()
         }
         else
         {
-            notInRange = !notInRange;
+            break;
         }
     }
 
     ///getting the waiting time
     cout << "Please enter your waiting time time: ";
     intWaitingTime = toInt();
+
+    ///making sure that waiting time is range
+    while(notInRange)
+    {
+        if(intWaitingTime < 0)
+        {
+            cout << "You must enter a posive number " << endl;
+            cout << "Please ener your waiting time : ";
+            intWaitingTime = toInt();
+        }
+        else
+        {
+            break;
+        }
+    }
 
     ///computing the time in which the alarm will go off
     intOffTime = intCurrentTime + intWaitingTime;
